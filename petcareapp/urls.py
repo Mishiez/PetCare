@@ -9,6 +9,13 @@ urlpatterns = [
     path('blog/', views.blog, name='blog'),
     path('blogdetails/', views.blogdetails, name='blogdetails'),
     path('portfoliodetails/', views.portfoliodetails, name='portfoliodetails'),
-    path('servicedetails', views.service, name='servicedetails'),
-    path('starter', views.starter, name='starter'),
+    path('servicedetails/', views.servicedetails, name='servicedetails'),
+    path('starter/', views.starter, name='starter'),
+    path('about/', views.about, name='about'),
+    path('portfolio/', views.portfolio, name='portfolio'),
+    path('services/', views.services, name='services'),
+    path('contact/', views.contact, name='contact'),
+    path('pricing/', views.pricing, name='pricing'),
+
+
 ]
