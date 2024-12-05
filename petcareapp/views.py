@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from petcareapp.models import Contact
+from petcareapp.forms import ContactForm
 
 # Create your views here.
 def index(request):
@@ -54,3 +55,16 @@ def delete(request,id):
     contacted = Contact.objects.get(id=id)
     contacted.delete()
     return redirect('/show')
+
+def edit(request,id):
+    editcontact = Contact.objects.get(id=id)
+    return render(request,'edit.html',{'contact':editcontact})
+
+def update(request,id):
+    updateinfo = Contact.objects.get(id=id)
+    form = ContactForm(request.POST,instance=updateinfo)
+    if form.is_valid():
+        form.save()
+        return redirect('/show')
+    else:
+        return render(request,'edit.html')
