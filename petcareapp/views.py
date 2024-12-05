@@ -38,10 +38,19 @@ def contact(request):
             message = request.POST['message'],
         )
         mycontact.save()
-        return redirect('/contact')
+        return redirect('/show')
     else:
         return render(request,'contact.html')
 
 
 def pricing(request):
     return render(request,'pricing.html')
+
+def show(request):
+    allcontacts=Contact.objects.all()
+    return render(request,'show.html',{'contact':allcontacts})
+
+def delete(request,id):
+    contacted = Contact.objects.get(id=id)
+    contacted.delete()
+    return redirect('/show')
