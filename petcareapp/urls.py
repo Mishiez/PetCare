@@ -5,7 +5,7 @@ from petcareapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index'),
+    path('index/', views.index, name='index'),
     path('blog/', views.blog, name='blog'),
     path('blogdetails/', views.blogdetails, name='blogdetails'),
     path('portfoliodetails/', views.portfoliodetails, name='portfoliodetails'),
@@ -20,6 +20,8 @@ urlpatterns = [
     path('delete/<int:id>', views.delete),
     path('edit/<int:id>', views.edit, name='edit'),
     path('update/<int:id>', views.update, name='update'),
+    path('', views.register, name='register'),
+    path('login/', views.login, name='login'),
 
 
 

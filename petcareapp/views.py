@@ -1,10 +1,23 @@
 from django.shortcuts import render, redirect
-from petcareapp.models import Contact
+
+from petcareapp.models import Contact,Member
 from petcareapp.forms import ContactForm
 
 # Create your views here.
 def index(request):
-    return render(request,'index.html')
+    if request.method == 'POST':
+        if Member.objects.filter(
+            username = request.POST['username'],
+            password = request.POST['password'],
+        ).exists():
+            return render(request,'index.html')
+        else:
+            return render(request,'login.html')
+
+    else:
+        return render(request,'login.html')
+
+
 
 def blog(request):
     return render(request,'blog.html')
@@ -68,3 +81,18 @@ def update(request,id):
         return redirect('/show')
     else:
         return render(request,'edit.html')
+
+def register(request):
+    if request.method == 'POST':
+         members = Member(
+            name = request.POST['name'],
+            username = request.POST['username'],
+            password = request.POST['password'],
+         )
+         members.save()
+         return redirect('/login')
+    else:
+        return render(request,'register.html')
+
+def login(request):
+    return render(request,'login.html')
