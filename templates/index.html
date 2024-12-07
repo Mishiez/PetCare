@@ -4,15 +4,14 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - KnightOne Bootstrap Template</title>
+  <title>Pet Care Made Simple</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
     {% load static %}
 
   <!-- Favicons -->
-  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
-  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+  <link href="{% static 'assets/img/img.png' %}" rel="icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -29,13 +28,6 @@
   <!-- Main CSS File -->
   <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: KnightOne
-  * Template URL: https://bootstrapmade.com/knight-simple-one-page-bootstrap-template/
-  * Updated: Oct 16 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body class="index-page">
@@ -46,7 +38,7 @@
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">KnightOne</h1>
+        <h1 class="sitename">PetCare</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -56,6 +48,8 @@
           <li><a href="{% url 'services' %}">Services</a></li>
           <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
           <li><a href="{% url 'pricing' %}">Pricing</a></li>
+            <li><a href="{% url 'upload' %}">Upload Pet image</a></li>
+            <li><a href="{% url 'image' %}">My Pet Images</a></li>
           <li><a href="{% url 'blog' %}">Blog</a></li>
           <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
@@ -89,17 +83,106 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
 
-      <img src="{% static 'assets/img/hero-bg.jpg' %}" alt="" data-aos="fade-in">
+      <img src="https://images.pexels.com/photos/1198802/pexels-photo-1198802.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" data-aos="fade-in">
 
       <div class="container d-flex flex-column align-items-center text-center">
-        <h2 data-aos="fade-up" data-aos-delay="100">Welcome to Our Website</h2>
-        <p data-aos="fade-up" data-aos-delay="200">We are team of talented designers making websites with Bootstrap</p>
-        <div data-aos="fade-up" data-aos-delay="300">
-          <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
-        </div>
+        <h2 data-aos="fade-up" data-aos-delay="100">Caring for Pets, Connecting Owners</h2>
+          <br><br>
+        <p data-aos="fade-up" data-aos-delay="200">Simplify pet care with our all-in-one platform. From scheduling vet visits to connecting with trusted pet care providers, we've got you covered.</p>
       </div>
 
     </section><!-- /Hero Section -->
+
+
+      <section id="features" class="py-5" style="background-color: #f8f9fa;">
+    <div class="container">
+        <h2 class="text-center mb-5" style="color: #6c757d; font-family: 'Arial', sans-serif;">Our Key Features</h2>
+        <div class="row text-center">
+
+            <!-- Feature 1: Appointment Booking -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-lg border-light rounded" style="transition: transform 0.3s ease;">
+                    <img src="https://images.pexels.com/photos/5255537/pexels-photo-5255537.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="Appointment Booking" style="border-radius: 15px; height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color:#B39DDB; font-weight: bold;">Appointment Booking</h5>
+                        <p class="card-text text-muted">Easily book appointments for vet visits, grooming, and other pet care services.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 2: Pet Care Tips -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-lg border-light rounded" style="transition: transform 0.3s ease;">
+                    <img src="https://images.pexels.com/photos/19145877/pexels-photo-19145877/free-photo-of-a-dog-at-a-groomer.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="card-img-top" alt="Pet Care Tips" style="border-radius: 15px; height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color:#B39DDB; font-weight: bold;">Pet Care Tips</h5>
+                        <p class="card-text text-muted">Access expert tips for taking care of your pet’s health, diet, and general well-being.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 3: Upload Pet Images -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-lg border-light rounded" style="transition: transform 0.3s ease;">
+                    <img src="https://images.pexels.com/photos/17210067/pexels-photo-17210067/free-photo-of-locker-decorated-with-stickers.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="card-img-top" alt="Upload Pet Images" style="border-radius: 15px; height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color:#B39DDB; font-weight: bold;">Upload Your Pet’s Images</h5>
+                        <p class="card-text text-muted">Share your pet’s photos with other pet owners and build your pet’s online profile.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row text-center">
+            <!-- Feature 4: Community Forum -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-lg border-light rounded" style="transition: transform 0.3s ease;">
+                    <img src="https://images.pexels.com/photos/207896/pexels-photo-207896.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="card-img-top" alt="Community Forum" style="border-radius: 15px; height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color:#B39DDB; font-weight: bold;">Community Forum</h5>
+                        <p class="card-text text-muted">Join a community of pet owners to share experiences, tips, and advice.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 5: Pet Training Resources -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-lg border-light rounded" style="transition: transform 0.3s ease;">
+                    <img src="https://images.pexels.com/photos/7210670/pexels-photo-7210670.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="card-img-top" alt="Pet Training Resources" style="border-radius: 15px; height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color:#B39DDB; font-weight: bold;">Pet Training Resources</h5>
+                        <p class="card-text text-muted">Learn how to train your pet with articles, videos, and expert guidance.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature 6: Create Pet Profile -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-lg border-light rounded" style="transition: transform 0.3s ease;">
+                    <img src="https://th.bing.com/th/id/OIP.KO0jqn0D7TpLKwtw-AKhngHaJQ?rs=1&pid=ImgDetMain" class="card-img-top" alt="Pet Profile" style="border-radius: 15px; height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color:#B39DDB; font-weight: bold;">Create Pet Profile</h5>
+                        <p class="card-text text-muted">Create and manage profiles for your pets, including their health and preferences.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row text-center">
+            <!-- Feature 7: Emergency Services -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-lg border-light rounded" style="transition: transform 0.3s ease;">
+                    <img src="https://images.pexels.com/photos/6034771/pexels-photo-6034771.jpeg?auto=compress&cs=tinysrgb&w=600" class="card-img-top" alt="Emergency Services" style="border-radius: 15px; height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color:#B39DDB; font-weight: bold;">Emergency Services</h5>
+                        <p class="card-text text-muted">Get immediate help with 24/7 emergency services, vet helplines, and more.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 
@@ -125,56 +208,6 @@
 
     </section><!-- /Call To Action Section -->
 
-    <!-- Features Section -->
-    <section id="features" class="features section">
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="features-image col-lg-6 order-lg-2" data-aos="fade-up" data-aos-delay="100"><img src="{% static 'assets/img/features-bg.jpg' %}" alt=""></div>
-
-          <div class="col-lg-6 order-lg-1">
-
-            <div class="features-item d-flex ps-0 ps-lg-3 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="200">
-              <i class="bi bi-archive flex-shrink-0"></i>
-              <div>
-                <h4>Est labore ad</h4>
-                <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
-              </div>
-            </div><!-- End Features Item-->
-
-            <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="300">
-              <i class="bi bi-basket flex-shrink-0"></i>
-              <div>
-                <h4>Harum esse qui</h4>
-                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
-              </div>
-            </div><!-- End Features Item-->
-
-            <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="400">
-              <i class="bi bi-broadcast flex-shrink-0"></i>
-              <div>
-                <h4>Aut occaecati</h4>
-                <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
-              </div>
-            </div><!-- End Features Item-->
-
-            <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="500">
-              <i class="bi bi-camera-reels flex-shrink-0"></i>
-              <div>
-                <h4>Beatae veritatis</h4>
-                <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
-              </div>
-            </div><!-- End Features Item-->
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- /Features Section -->
 
     <!-- Clients Section -->
     <section id="clients" class="clients section">
@@ -430,31 +463,55 @@
 
   </main>
 
-  <footer id="footer" class="footer dark-background">
-    <div class="container">
-      <h3 class="sitename">KnightOne</h3>
-      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
-      <div class="social-links d-flex justify-content-center">
-        <a href=""><i class="bi bi-twitter-x"></i></a>
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-skype"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a>
+  <!-- Footer -->
+<footer class="bg-dark text-white py-5 text-center">
+  <div class="container">
+    <!-- Footer Links -->
+    <div class="row mb-4 justify-content-center">
+      <div class="col-md-3">
+        <h5 class="text-uppercase font-weight-bold" style="color: #FFD700;">Company</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white">About Us</a></li>
+          <li><a href="#" class="text-white">Careers</a></li>
+          <li><a href="#" class="text-white">Blog</a></li>
+        </ul>
       </div>
-      <div class="container">
-        <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">KnightOne</strong> <span>All Rights Reserved</span>
-        </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you've purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-        </div>
+      <div class="col-md-3">
+        <h5 class="text-uppercase font-weight-bold" style="color: #FFD700;">Services</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white">Appointment Booking</a></li>
+          <li><a href="#" class="text-white">Pet Care Tips</a></li>
+          <li><a href="#" class="text-white">Image Uploads</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h5 class="text-uppercase font-weight-bold" style="color: #FFD700;">Help</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white">Contact Us</a></li>
+          <li><a href="#" class="text-white">FAQ</a></li>
+          <li><a href="#" class="text-white">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h5 class="text-uppercase font-weight-bold" style="color: #FFD700;">Follow Us</h5>
+        <ul class="list-unstyled d-flex justify-content-center">
+          <li><a href="#" style="background-color: #3b5998; padding: 10px; border-radius: 50%; transition: transform 0.3s ease;" class="text-white mx-2"><i class="fab fa-facebook-f" style="font-size: 20px;"></i></a></li>
+          <li><a href="#" style="background-color: #1da1f2; padding: 10px; border-radius: 50%; transition: transform 0.3s ease;" class="text-white mx-2"><i class="fab fa-twitter" style="font-size: 20px;"></i></a></li>
+          <li><a href="#" style="background-color: #e4405f; padding: 10px; border-radius: 50%; transition: transform 0.3s ease;" class="text-white mx-2"><i class="fab fa-instagram" style="font-size: 20px;"></i></a></li>
+          <li><a href="#" style="background-color: #0077b5; padding: 10px; border-radius: 50%; transition: transform 0.3s ease;" class="text-white mx-2"><i class="fab fa-linkedin" style="font-size: 20px;"></i></a></li>
+        </ul>
       </div>
     </div>
-  </footer>
+
+    <!-- Copyright -->
+    <div class="text-center">
+      <p>© 2024 PetCare. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+<!-- End Footer -->
+
+
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
