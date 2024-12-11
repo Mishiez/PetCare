@@ -11,8 +11,7 @@
     {% load static %}
 
   <!-- Favicons -->
-  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
-  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+  <link href="{% static 'assets/img/img.png' %}" rel="icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -51,12 +50,11 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="blog.html" class="active">Blog</a></li>
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'services' %}">Services</a></li>
+          <li><a href="{% url 'pricing' %}">Pricing</a></li>
+          <li><a href="{% url 'blog' %}" class="active">Blog</a></li>
           <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="#">Dropdown 1</a></li>
@@ -74,220 +72,418 @@
               <li><a href="#">Dropdown 4</a></li>
             </ul>
           </li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="cta-btn" href="#about">Get Started</a>
+      <a class="cta-btn" href={% url 'about' %}>Get Started</a>
 
     </div>
   </header>
 
   <main class="main">
 
-    <!-- Page Title -->
-    <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/page-title-bg.webp);">
-      <div class="container position-relative">
-        <h1>Blog</h1>
-        <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam molestias.</p>
-        <nav class="breadcrumbs">
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Blog</li>
-          </ol>
-        </nav>
+  <!-- Page Title -->
+  <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/page-title-bg.webp);">
+    <div class="container position-relative">
+      <h1>PetCare Blog</h1>
+      <p>Your guide to pet health, training, and adoption tips.</p>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li class="current">Blog</li>
+        </ol>
+      </nav>
+    </div>
+  </div><!-- End Page Title -->
+
+  <!-- Blog Posts Section -->
+  <section id="blog-posts" class="blog-posts section">
+    <div class="container">
+      <div class="row gy-4">
+
+        <!-- Blog Preview 1 -->
+        <div class="col-lg-4">
+          <article>
+            <div class="post-img">
+              <img src="{% static 'assets/img/blog/blog-1.jpg' %}" alt="" class="img-fluid">
+            </div>
+            <p class="post-category">Pet Health</p>
+            <h2 class="title">
+              <a href="#blog1" onclick="toggleBlog('blog1')">How to Keep Your Pet Healthy This Winter</a>
+            </h2>
+            <div class="d-flex align-items-center">
+              <img src="{% static 'assets/img/blog/blog-author.jpg' %}" alt="" class="img-fluid post-author-img flex-shrink-0">
+              <div class="post-meta">
+                <p class="post-author">Dr. Lisa Harper</p>
+                <p class="post-date">
+                  <time datetime="2022-01-01">Jan 1, 2024</time>
+                </p>
+              </div>
+            </div>
+            <!-- Full Blog Content -->
+            <!-- Full Blog Content -->
+<div id="blog1" class="full-blog-content" style="display: none;">
+    <h2>How to Keep Your Pet Healthy This Winter</h2>
+
+    <p>As the cold weather rolls in, it's essential to take extra precautions to ensure that your pet remains healthy and comfortable during winter months. Here are some helpful tips to keep your furry friend in top shape:</p>
+
+    <h3>1. Keep Your Pet Warm</h3>
+    <p>Pets, especially those with short coats, may get cold during the winter. Here are a few ways to keep them cozy:</p>
+    <ul>
+        <li><strong>Coats & Sweaters:</strong> Consider getting a pet sweater or jacket for extra warmth, particularly for smaller or short-haired breeds.</li>
+        <li><strong>Bedding:</strong> Provide a warm, dry place for your pet to sleep. Ensure that their bed is in a sheltered spot, away from drafts.</li>
+    </ul>
+
+    <h3>2. Limit Time Outside</h3>
+    <p>While dogs love playing in the snow, it's important not to overdo it. Cold temperatures can lead to frostbite or hypothermia. </p>
+    <ul>
+        <li><strong>Shorten Walks:</strong> Limit outdoor time to short, brisk walks.</li>
+        <li><strong>Paw Protection:</strong> Snow, ice, and salt can irritate your pet's paws. Consider using protective booties or wiping their paws after walks.</li>
+    </ul>
+
+    <h3>3. Hydration and Proper Nutrition</h3>
+    <p>Pets need plenty of water, even in the winter. Ensure your pet has access to fresh water at all times, and adjust their diet as needed for the colder months:</p>
+    <ul>
+        <li><strong>Increase Calories:</strong> If your pet is more active during the winter, they may require additional food for energy. Consult with your vet to adjust portion sizes.</li>
+        <li><strong>Fresh Water:</strong> Make sure water bowls don’t freeze. Use a heated bowl if necessary.</li>
+    </ul>
+
+    <h3>4. Regular Grooming</h3>
+    <p>Even though your pet may not need frequent baths during winter, regular grooming is essential:</p>
+    <ul>
+        <li><strong>Keep Their Coat Clean and Tidy:</strong> Grooming helps your pet's fur stay clean and healthy, providing better insulation against the cold.</li>
+        <li><strong>Brush Regularly:</strong> Prevent mats and tangles that could trap moisture, causing skin problems.</li>
+    </ul>
+
+    <h3>5. Keep Them Active Indoors</h3>
+    <p>When the weather outside is too harsh, try to keep your pet mentally and physically stimulated indoors:</p>
+    <ul>
+        <li><strong>Playtime:</strong> Use toys, puzzle feeders, or training exercises to keep them active.</li>
+        <li><strong>Interactive Games:</strong> Games like fetch or hide-and-seek can also be done indoors to burn off energy.</li>
+    </ul>
+
+    <h3>6. Watch for Winter Hazards</h3>
+    <p>Winter brings about new dangers for pets, including:</p>
+    <ul>
+        <li><strong>Antifreeze:</strong> Be cautious of antifreeze spills, which are highly toxic to pets. Clean up any spills immediately.</li>
+        <li><strong>Frostbite:</strong> Be vigilant about frostbite, especially on areas like the ears, paws, and tail. If your pet appears to be shivering or uncomfortable, bring them inside immediately.</li>
+    </ul>
+
+    <h3>7. Keep Up with Vet Visits</h3>
+    <p>Make sure your pet's vaccinations and checkups are up to date. Winter can bring new challenges like respiratory infections or joint pain due to the cold, and it's crucial to have your pet checked regularly.</p>
+
+    <h3>Conclusion</h3>
+    <p>Winter can be a tough season for pets, but with the right care and attention, you can ensure they stay happy, healthy, and warm. Keep these tips in mind, and enjoy the chilly season with your furry companion!</p>
+</div>
+
+          </article>
+        </div><!-- End post list item -->
+
+        <!-- Blog Preview 2 -->
+        <div class="col-lg-4">
+          <article>
+            <div class="post-img">
+              <img src="{% static 'assets/img/blog/blog-2.jpg' %}" alt="" class="img-fluid">
+            </div>
+            <p class="post-category">Pet Training</p>
+            <h2 class="title">
+              <a href="#blog2" onclick="toggleBlog('blog2')">Top 5 Dog Training Tips for Beginners</a>
+            </h2>
+            <div class="d-flex align-items-center">
+              <img src="{% static 'assets/img/blog/blog-author-2.jpg' %}" alt="" class="img-fluid post-author-img flex-shrink-0">
+              <div class="post-meta">
+                <p class="post-author">John Doe</p>
+                <p class="post-date">
+                  <time datetime="2022-01-01">Feb 5, 2024</time>
+                </p>
+              </div>
+            </div>
+            <!-- Full Blog Content -->
+            <!-- Full Blog Content -->
+<div id="blog2" class="full-blog-content" style="display: none;">
+    <h2>Top 5 Dog Training Tips for Beginners</h2>
+
+    <p>Training your dog is an essential part of being a responsible pet owner. Proper training ensures that your dog is well-behaved and happy. Here are the top 5 dog training tips for beginners:</p>
+
+    <h3>1. Start Early</h3>
+    <p>The earlier you start training your dog, the better. Puppies are more receptive to training, but it's never too late to start, even with adult dogs. Early training helps them understand the rules of your home and creates a solid foundation for good behavior.</p>
+
+    <h3>2. Be Consistent</h3>
+    <p>Consistency is key in dog training. Use the same commands and gestures every time, and ensure that everyone in the household is on the same page. This helps your dog understand what you expect from them.</p>
+
+    <h3>3. Use Positive Reinforcement</h3>
+    <p>Positive reinforcement is one of the most effective training methods. Reward your dog with treats, praise, or play when they follow commands correctly. This encourages them to repeat the behavior.</p>
+    <ul>
+        <li><strong>Rewards:</strong> Use small, tasty treats or toys that your dog loves.</li>
+        <li><strong>Praise:</strong> Verbal praise like “Good boy!” or “Good girl!” also reinforces positive behavior.</li>
+    </ul>
+
+    <h3>4. Keep Training Sessions Short and Fun</h3>
+    <p>Dogs have short attention spans, so keep training sessions brief—around 10 to 15 minutes at a time. Make sure that the sessions are enjoyable and end on a positive note. If your dog gets frustrated or loses focus, take a break and try again later.</p>
+
+    <h3>5. Socialize Your Dog</h3>
+    <p>Socialization is an important aspect of dog training. Expose your dog to different environments, people, and other animals in a controlled and positive way. This helps them become well-adjusted and less fearful of new situations.</p>
+    <ul>
+        <li><strong>Introduce new environments:</strong> Take your dog to parks, pet stores, or other public places.</li>
+        <li><strong>Meet new people and dogs:</strong> Let your dog interact with other dogs and people in a safe and controlled manner.</li>
+    </ul>
+
+    <h3>Conclusion</h3>
+    <p>Training your dog takes patience, time, and consistency, but the rewards are worth it. With these tips, you'll have a well-behaved dog that can follow commands and enjoy a positive relationship with you. Happy training!</p>
+</div>
+
+          </article>
+        </div><!-- End post list item -->
+
+        <!-- Blog Preview 3 -->
+        <div class="col-lg-4">
+          <article>
+            <div class="post-img">
+              <img src="{% static 'assets/img/blog/blog-3.jpg' %}" alt="" class="img-fluid">
+            </div>
+            <p class="post-category">Pet Adoption</p>
+            <h2 class="title">
+              <a href="#blog3" onclick="toggleBlog('blog3')">Why You Should Adopt, Not Shop</a>
+            </h2>
+            <div class="d-flex align-items-center">
+              <img src="{% static 'assets/img/blog/blog-author-3.jpg' %}" alt="" class="img-fluid post-author-img flex-shrink-0">
+              <div class="post-meta">
+                <p class="post-author">Sarah Martinez</p>
+                <p class="post-date">
+                  <time datetime="2022-01-01">Mar 22, 2024</time>
+                </p>
+              </div>
+            </div>
+            <!-- Full Blog Content -->
+            <!-- Full Blog Content -->
+<div id="blog3" class="full-blog-content" style="display: none;">
+    <h2>Why You Should Adopt, Not Shop</h2>
+
+    <p>Adopting a pet is one of the most rewarding decisions you can make. Whether you're considering adopting a dog, cat, or another animal, choosing to adopt from a shelter rather than purchasing from a breeder can have a positive impact on both the animal and your life. Here are some compelling reasons why you should adopt, not shop:</p>
+
+    <h3>1. Save a Life</h3>
+    <p>Every year, millions of pets are abandoned, surrendered, or placed in shelters. By adopting, you're giving a homeless animal a second chance at life. Many shelter pets are loving, well-behaved, and simply need a new home to thrive.</p>
+
+    <h3>2. Combat Overpopulation</h3>
+    <p>Adopting a pet from a shelter helps address the pet overpopulation problem. Shelters are often overcrowded, and many animals are euthanized due to lack of space. By adopting, you're helping reduce the number of animals that end up in shelters and contribute to the overall well-being of the community.</p>
+
+    <h3>3. Adopt, Don't Support Puppy Mills</h3>
+    <p>When you purchase a pet from a breeder, especially a puppy mill, you may be supporting inhumane practices. Puppy mills are notorious for their poor living conditions and unethical breeding practices. By choosing adoption, you are not supporting these cruel industries and are instead promoting the welfare of animals.</p>
+
+    <h3>4. Adopt a Pet with a Known Personality</h3>
+    <p>Many pets in shelters are already trained, housebroken, and have developed personalities. When adopting, you can meet the animal and learn more about its temperament before making a decision. This can be an advantage compared to getting a puppy, where behavior and personality are harder to predict.</p>
+
+    <h3>5. Save Money</h3>
+    <p>Adopting a pet is often less expensive than purchasing one from a breeder. Shelters usually charge a nominal adoption fee that covers vaccinations, spaying/neutering, and microchipping, making adoption an affordable option for pet owners. Plus, many pets from shelters are already spayed or neutered, which can save you additional costs.</p>
+
+    <h3>6. Help End Breed Discrimination</h3>
+    <p>Many people think that they can only adopt certain breeds, but there are plenty of breed-specific rescues available. Shelters often have a variety of breeds, including mixed-breeds, and give you the chance to adopt a dog or cat that suits your lifestyle and personality. By adopting, you also help challenge the stigma against certain breeds.</p>
+
+    <h3>Conclusion</h3>
+    <p>Choosing to adopt a pet is an act of kindness and responsibility. You're not just getting a companion; you're making a difference in the life of an animal in need. So, before you shop for a pet, consider adopting and giving a deserving animal a forever home. You'll be rewarded with unconditional love and the satisfaction of knowing you've made a positive impact.</p>
+</div>
+
+          </article>
+        </div><!-- End post list item -->
+
+        <!-- Blog Preview 4 -->
+        <div class="col-lg-4">
+          <article>
+            <div class="post-img">
+              <img src="{% static 'assets/img/blog/blog-4.jpg' %}" alt="" class="img-fluid">
+            </div>
+            <p class="post-category">Pet Nutrition</p>
+            <h2 class="title">
+              <a href="#blog4" onclick="toggleBlog('blog4')">What to Feed Your Pet for Optimal Health</a>
+            </h2>
+            <div class="d-flex align-items-center">
+              <img src="{% static 'assets/img/blog/blog-author-4.jpg' %}" alt="" class="img-fluid post-author-img flex-shrink-0">
+              <div class="post-meta">
+                <p class="post-author">Michael Lee</p>
+                <p class="post-date">
+                  <time datetime="2022-01-01">Apr 10, 2024</time>
+                </p>
+              </div>
+            </div>
+            <!-- Full Blog Content -->
+            <!-- Full Blog Content -->
+<div id="blog4" class="full-blog-content" style="display: none;">
+    <h2>What to Feed Your Pet for Optimal Health</h2>
+
+    <p>As a responsible pet owner, one of the most important decisions you’ll make is what to feed your pet. Proper nutrition is vital for your pet’s overall health and well-being. Whether you have a dog, cat, or other animals, providing the right type of food will help them live a long, happy, and healthy life. Here are some guidelines on what to feed your pet for optimal health:</p>
+
+    <h3>1. Understand Your Pet’s Nutritional Needs</h3>
+    <p>Each pet has unique nutritional requirements based on their species, age, activity level, and health status. For example, puppies and kittens need more calories, protein, and fat than adult pets. Senior pets, on the other hand, may require special diets to support their joints, digestion, or other age-related issues. Make sure you know your pet’s specific needs before choosing food.</p>
+
+    <h3>2. Choose High-Quality Pet Food</h3>
+    <p>Always choose a high-quality pet food that is tailored to your pet’s needs. Look for pet food that lists animal protein sources (such as chicken, beef, or fish) as the first ingredient. Avoid foods that contain excessive fillers like corn, wheat, or soy, as these can be hard for pets to digest and provide little nutritional value. A balanced diet with high-quality ingredients is key to supporting your pet’s health.</p>
+
+    <h3>3. Provide a Balanced Diet</h3>
+    <p>A balanced diet is crucial for your pet's health. For dogs and cats, the food should contain the appropriate levels of protein, fat, carbohydrates, vitamins, and minerals. Dogs require a variety of proteins, including meat, poultry, and fish, while cats are obligate carnivores and need meat as their primary protein source. Make sure the food you choose is formulated for their life stage, size, and health condition.</p>
+
+    <h3>4. Hydration is Key</h3>
+    <p>Water is an often-overlooked aspect of pet nutrition. Dehydration can lead to serious health problems, so always ensure your pet has access to fresh, clean water. For cats, you may want to consider wet food, which can help increase their water intake, as some cats are less likely to drink water from a bowl.</p>
+
+    <h3>5. Avoid Human Food</h3>
+    <p>While it might be tempting to share your food with your pet, many human foods can be toxic to animals. Common foods like chocolate, grapes, onions, garlic, and alcohol can be harmful or even deadly to pets. Always be cautious about what your pet consumes, and stick to pet-specific treats and meals.</p>
+
+    <h3>6. Watch for Food Allergies</h3>
+    <p>Pets, especially dogs and cats, can develop food allergies or sensitivities. If you notice signs like itching, vomiting, diarrhea, or excessive scratching, your pet may have an allergy to a certain ingredient. Consult with your veterinarian if you suspect food allergies to determine the best diet for your pet.</p>
+
+    <h3>7. Treats in Moderation</h3>
+    <p>Treats are a great way to show your pet affection, but they should only make up a small portion of their diet. Too many treats can lead to obesity, so always ensure that treats are given in moderation and that they don’t exceed 10% of your pet’s daily caloric intake.</p>
+
+    <h3>8. Consult Your Veterinarian</h3>
+    <p>When in doubt, always consult your veterinarian for advice on what to feed your pet. They can provide expert guidance on choosing the best diet for your pet based on their individual needs and health status. Regular check-ups with your vet will also help ensure that your pet is maintaining a healthy weight and receiving proper nutrition.</p>
+
+    <h3>Conclusion</h3>
+    <p>Feeding your pet a balanced, high-quality diet is one of the most important ways to keep them healthy. By understanding your pet’s nutritional needs, choosing the right food, and providing proper hydration, you’ll be helping them live their best life. Always keep your vet’s advice in mind, and remember that a little extra care and attention to your pet's diet can go a long way in ensuring their health and happiness.</p>
+</div>
+
+          </article>
+        </div><!-- End post list item -->
+
+        <!-- Blog Preview 5 -->
+        <div class="col-lg-4">
+          <article>
+            <div class="post-img">
+              <img src="{% static 'assets/img/blog/blog-5.jpg' %}" alt="" class="img-fluid">
+            </div>
+            <p class="post-category">Pet Care</p>
+            <h2 class="title">
+              <a href="#blog5" onclick="toggleBlog('blog5')">How to Create a Safe and Comfortable Pet Home</a>
+            </h2>
+            <div class="d-flex align-items-center">
+              <img src="{% static 'assets/img/blog/blog-author-5.jpg' %}" alt="" class="img-fluid post-author-img flex-shrink-0">
+              <div class="post-meta">
+                <p class="post-author">Jessica Green</p>
+                <p class="post-date">
+                  <time datetime="2022-01-01">May 18, 2024</time>
+                </p>
+              </div>
+            </div>
+            <!-- Full Blog Content -->
+            <!-- Full Blog Content -->
+<div id="blog5" class="full-blog-content" style="display: none;">
+    <h2>How to Create a Safe and Comfortable Pet Home</h2>
+
+    <p>Creating a safe and comfortable home for your pet is essential to their overall well-being. Pets spend a lot of time at home, and it's your responsibility to ensure their environment is not only comfortable but also secure and conducive to their happiness. Here’s how you can create the perfect home for your pet:</p>
+
+    <h3>1. Choose the Right Space</h3>
+    <p>The first step in creating a pet-friendly home is choosing the right space. Ensure your pet has a designated area where they feel secure and comfortable. For dogs, this could be a cozy bed or crate in a quiet part of the house. For cats, it might be a secluded spot or a cat tree where they can watch the world around them. This gives them a space to retreat when they need rest or relaxation.</p>
+
+    <h3>2. Pet-Proof Your Home</h3>
+    <p>Just like baby-proofing a home for young children, pet-proofing is crucial for keeping your pet safe. Look for potential hazards such as electrical cords, sharp objects, and dangerous chemicals, and make sure they’re out of reach. Install baby gates to keep pets away from dangerous areas, and use covers to protect furniture or appliances that may pose a risk.</p>
+
+    <h3>3. Create a Comfortable Resting Area</h3>
+    <p>Your pet needs a comfortable space to sleep and rest. Invest in a good-quality bed or mat for them, considering their size, breed, and sleeping preferences. Make sure the bed is in a quiet, safe spot away from loud noises, and provide blankets or soft cushions to keep them warm and cozy. A peaceful sleeping environment helps reduce stress and anxiety.</p>
+
+    <h3>4. Provide Plenty of Stimulation</h3>
+    <p>Pets, especially dogs and cats, need mental stimulation to stay happy. Include toys and interactive items that allow them to play and explore their surroundings. Dogs love chew toys, puzzle feeders, and balls to chase, while cats enjoy scratching posts, climbing trees, and laser pointers. Stimulation is important for preventing boredom and behavioral issues.</p>
+
+    <h3>5. Ensure Proper Ventilation and Lighting</h3>
+    <p>A well-ventilated and well-lit home is key for your pet's comfort. Fresh air and sunlight are beneficial for both your pet’s physical health and mental well-being. Ensure their resting area is in a place that gets enough natural light and is adequately ventilated to prevent the buildup of stale air. Avoid placing their resting area in direct sunlight for long periods, as this could cause overheating.</p>
+
+    <h3>6. Set Up a Safe Outdoor Space</h3>
+    <p>If your pet enjoys spending time outdoors, create a safe outdoor space for them. Ensure the yard is secure with fencing that prevents them from running off or encountering danger. Provide a shaded area where they can relax during hot weather, and make sure to regularly check for hazards like toxic plants, sharp objects, or open pools of water.</p>
+
+    <h3>7. Keep Dangerous Items Out of Reach</h3>
+    <p>Pets are naturally curious and may try to explore anything they come across. Make sure items like cleaning products, medications, and small objects that could be choking hazards are safely stored away. Consider using childproof locks on cabinets and drawers that are accessible to your pet.</p>
+
+    <h3>8. Maintain a Routine</h3>
+    <p>Pets thrive on routine. Set regular feeding, play, and bathroom times to give your pet a sense of stability. Having a routine helps reduce anxiety, especially for dogs and cats that can become stressed if their schedule is unpredictable. This also helps to establish good habits for both you and your pet.</p>
+
+    <h3>9. Provide a Safe Escape</h3>
+    <p>It’s important to create an escape plan in case of emergencies. Make sure your pet is familiar with a safe area in your home, such as a crate or designated room, where they can retreat to during stressful situations like thunderstorms or when there are visitors. Having a safe space will help them feel secure during potentially anxiety-inducing events.</p>
+
+    <h3>10. Regular Cleaning and Maintenance</h3>
+    <p>Keeping your pet's environment clean and well-maintained is key to their health. Regularly wash their bedding, toys, and food dishes. Vacuum and mop floors to remove pet hair and dirt. Regular cleaning reduces the chances of infections or allergies and helps create a hygienic space for both you and your pet.</p>
+
+    <h3>Conclusion</h3>
+    <p>Creating a safe and comfortable pet home is about more than just providing food and shelter. By considering your pet's needs and preferences, pet-proofing your space, and offering mental and physical stimulation, you can create an environment where your pet can thrive. A safe and comfortable home ensures that your pet feels loved and protected, which ultimately leads to a healthier, happier life for them.</p>
+</div>
+
+          </article>
+        </div><!-- End post list item -->
+
+        <!-- Blog Preview 6 -->
+        <div class="col-lg-4">
+          <article>
+            <div class="post-img">
+              <img src="{% static 'assets/img/blog/blog-6.jpg' %}" alt="" class="img-fluid">
+            </div>
+            <p class="post-category">Emergency Care</p>
+            <h2 class="title">
+              <a href="#blog6" onclick="toggleBlog('blog6')">What to Do If Your Pet Has a Medical Emergency</a>
+            </h2>
+            <div class="d-flex align-items-center">
+              <img src="{% static 'assets/img/blog/blog-author-6.jpg' %}" alt="" class="img-fluid post-author-img flex-shrink-0">
+              <div class="post-meta">
+                <p class="post-author">Dr. Alex Parker</p>
+                <p class="post-date">
+                  <time datetime="2022-01-01">Jun 25, 2024</time>
+                </p>
+              </div>
+            </div>
+            <!-- Full Blog Content -->
+            <!-- Full Blog Content -->
+<div id="blog6" class="full-blog-content" style="display: none;">
+    <h2>What to Do If Your Pet Has a Medical Emergency</h2>
+
+    <p>When a pet experiences a medical emergency, it can be a stressful and overwhelming situation for any pet owner. However, knowing what steps to take in an emergency can help you remain calm and act quickly to get your pet the care they need. Here’s what you should do if your pet has a medical emergency:</p>
+
+    <h3>1. Stay Calm</h3>
+    <p>It’s natural to feel panic when your pet is hurt or sick, but it’s important to stay as calm as possible. Panic can cloud your judgment and make it harder to think clearly. Take a few deep breaths to steady yourself, as this will allow you to act more effectively and provide the best care for your pet.</p>
+
+    <h3>2. Assess the Situation</h3>
+    <p>Quickly assess the severity of the situation. Look for signs such as bleeding, difficulty breathing, unconsciousness, or seizures. Knowing the nature of the emergency will help you decide whether immediate action is required or if it can wait until you contact a veterinarian.</p>
+
+    <h3>3. Contact Your Veterinarian</h3>
+    <p>If you believe the situation requires urgent attention, contact your veterinarian immediately. Many veterinary clinics have emergency hotlines, and they can offer guidance on what to do in the meantime. If it’s after hours, your veterinarian should be able to refer you to an emergency clinic.</p>
+
+    <h3>4. Administer First Aid if Necessary</h3>
+    <p>Depending on the nature of the emergency, you may need to administer first aid while waiting for help. Here are some common first aid steps for specific emergencies:</p>
+    <ul>
+        <li><strong>Bleeding:</strong> Apply pressure to the wound with a clean cloth or bandage to stop the bleeding. Keep your pet as still as possible to avoid aggravating the injury.</li>
+        <li><strong>Choking:</strong> If your pet is choking, you can attempt a Heimlich maneuver or clear the airway, but be cautious to avoid causing further harm.</li>
+        <li><strong>Seizures:</strong> If your pet is having a seizure, move them away from any obstacles or sharp objects. Do not try to restrain them, but time the seizure so you can inform the veterinarian of its duration.</li>
+        <li><strong>Breathing Difficulty:</strong> If your pet is struggling to breathe, keep them calm and make sure they are in a well-ventilated area. Avoid stressing them further, as it can exacerbate their condition.</li>
+    </ul>
+
+    <h3>5. Transport Your Pet to a Veterinarian</h3>
+    <p>If your pet needs to be transported to a veterinary clinic, try to keep them as comfortable as possible. Place them in a carrier or wrap them in a blanket to minimize movement. If they are bleeding or injured, ensure they are well-supported during transport to prevent further damage. Be sure to take all medical records and any medications they may need with you.</p>
+
+    <h3>6. Keep Emergency Numbers Handy</h3>
+    <p>Having emergency numbers readily available can be a lifesaver during a medical emergency. In addition to your regular veterinarian, keep a list of emergency veterinary clinics, animal poison control hotlines, and 24-hour animal hospitals. This will ensure that you know exactly where to go in case of an emergency.</p>
+
+    <h3>7. Monitor Your Pet’s Condition</h3>
+    <p>As you wait for professional care, keep a close eye on your pet’s condition. Take note of any changes, including the color of their gums, level of consciousness, or changes in breathing. This information will be important to share with the veterinarian and can help them assess the situation more accurately.</p>
+
+    <h3>8. Follow Up Care</h3>
+    <p>Once your pet has received emergency treatment, follow your veterinarian’s instructions for aftercare. Whether it’s administering medications, restricting their activity, or monitoring their recovery, following the prescribed plan will help ensure a smooth recovery and avoid further complications.</p>
+
+    <h3>9. Prepare for the Future</h3>
+    <p>While you can’t predict when a medical emergency will occur, being prepared can help reduce the stress when it does happen. Familiarize yourself with basic first aid for pets, and keep a first aid kit on hand with essential supplies such as bandages, antiseptic, and gauze. Regular check-ups with your veterinarian and a healthy lifestyle for your pet can also help prevent many emergencies from arising in the first place.</p>
+
+    <h3>Conclusion</h3>
+    <p>Knowing how to respond to a medical emergency involving your pet can save their life. Staying calm, assessing the situation, contacting your vet, and providing immediate first aid can make a huge difference. By being prepared and knowledgeable, you can ensure that your pet receives the best care during a crisis and can recover quickly and safely.</p>
+</div>
+
+          </article>
+        </div><!-- End post list item -->
+
       </div>
-    </div><!-- End Page Title -->
+    </div>
+  </section><!-- /Blog Posts Section -->
 
-    <!-- Blog Posts Section -->
-    <section id="blog-posts" class="blog-posts section">
 
-      <div class="container">
-        <div class="row gy-4">
 
-          <div class="col-lg-4">
-            <article>
+</main>
 
-              <div class="post-img">
-                <img src="{% static 'assets/img/blog/blog-1.jpg' %}" alt="" class="img-fluid">
-              </div>
 
-              <p class="post-category">Politics</p>
 
-              <h2 class="title">
-                <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
-              </h2>
-
-              <div class="d-flex align-items-center">
-                <img src="{% static 'assets/img/blog/blog-author.jpg' %}" alt="" class="img-fluid post-author-img flex-shrink-0">
-                <div class="post-meta">
-                  <p class="post-author">Maria Doe</p>
-                  <p class="post-date">
-                    <time datetime="2022-01-01">Jan 1, 2022</time>
-                  </p>
-                </div>
-              </div>
-
-            </article>
-          </div><!-- End post list item -->
-
-          <div class="col-lg-4">
-            <article>
-
-              <div class="post-img">
-                <img src="{% static 'assets/img/blog/blog-2.jpg' %}" alt="" class="img-fluid">
-              </div>
-
-              <p class="post-category">Sports</p>
-
-              <h2 class="title">
-                <a href="blog-details.html">Nisi magni odit consequatur autem nulla dolorem</a>
-              </h2>
-
-              <div class="d-flex align-items-center">
-                <img src="{% static 'assets/img/blog/blog-author-2.jpg' %}" alt="" class="img-fluid post-author-img flex-shrink-0">
-                <div class="post-meta">
-                  <p class="post-author">Allisa Mayer</p>
-                  <p class="post-date">
-                    <time datetime="2022-01-01">Jun 5, 2022</time>
-                  </p>
-                </div>
-              </div>
-
-            </article>
-          </div><!-- End post list item -->
-
-          <div class="col-lg-4">
-            <article>
-
-              <div class="post-img">
-                <img src="{% static 'assets/img/blog/blog-3.jpg' %}" alt="" class="img-fluid">
-              </div>
-
-              <p class="post-category">Entertainment</p>
-
-              <h2 class="title">
-                <a href="blog-details.html">Possimus soluta ut id suscipit ea ut in quo quia et soluta</a>
-              </h2>
-
-              <div class="d-flex align-items-center">
-                <img src="{% static 'assets/img/blog/blog-author-3.jpg' %}" alt="" class="img-fluid post-author-img flex-shrink-0">
-                <div class="post-meta">
-                  <p class="post-author">Mark Dower</p>
-                  <p class="post-date">
-                    <time datetime="2022-01-01">Jun 22, 2022</time>
-                  </p>
-                </div>
-              </div>
-
-            </article>
-          </div><!-- End post list item -->
-
-          <div class="col-lg-4">
-            <article>
-
-              <div class="post-img">
-                <img src="{% static 'assets/img/blog/blog-4.jpg' %}" alt="" class="img-fluid">
-              </div>
-
-              <p class="post-category">Sports</p>
-
-              <h2 class="title">
-                <a href="blog-details.html">Non rem rerum nam cum quo minus olor distincti</a>
-              </h2>
-
-              <div class="d-flex align-items-center">
-                <img src="{% static 'assets/img/blog/blog-author-4.jpg' %}" alt="" class="img-fluid post-author-img flex-shrink-0">
-                <div class="post-meta">
-                  <p class="post-author">Lisa Neymar</p>
-                  <p class="post-date">
-                    <time datetime="2022-01-01">Jun 30, 2022</time>
-                  </p>
-                </div>
-              </div>
-
-            </article>
-          </div><!-- End post list item -->
-
-          <div class="col-lg-4">
-            <article>
-
-              <div class="post-img">
-                <img src="{% static 'assets/img/blog/blog-5.jpg' %}" alt="" class="img-fluid">
-              </div>
-
-              <p class="post-category">Politics</p>
-
-              <h2 class="title">
-                <a href="blog-details.html">Accusamus quaerat aliquam qui debitis facilis consequatur</a>
-              </h2>
-
-              <div class="d-flex align-items-center">
-                <img src="{% static 'assets/img/blog/blog-author-5.jpg' %}" alt="" class="img-fluid post-author-img flex-shrink-0">
-                <div class="post-meta">
-                  <p class="post-author">Denis Peterson</p>
-                  <p class="post-date">
-                    <time datetime="2022-01-01">Jan 30, 2022</time>
-                  </p>
-                </div>
-              </div>
-
-            </article>
-          </div><!-- End post list item -->
-
-          <div class="col-lg-4">
-            <article>
-
-              <div class="post-img">
-                <img src="{% static 'assets/img/blog/blog-6.jpg' %}" alt="" class="img-fluid">
-              </div>
-
-              <p class="post-category">Entertainment</p>
-
-              <h2 class="title">
-                <a href="blog-details.html">Distinctio provident quibusdam numquam aperiam aut</a>
-              </h2>
-
-              <div class="d-flex align-items-center">
-                <img src="{% static 'assets/img/blog/blog-author-6.jpg' %}" alt="" class="img-fluid post-author-img flex-shrink-0">
-                <div class="post-meta">
-                  <p class="post-author">Mika Lendon</p>
-                  <p class="post-date">
-                    <time datetime="2022-01-01">Feb 14, 2022</time>
-                  </p>
-                </div>
-              </div>
-
-            </article>
-          </div><!-- End post list item -->
-
-        </div>
-      </div>
-
-    </section><!-- /Blog Posts Section -->
-
-    <!-- Blog Pagination Section -->
-    <section id="blog-pagination" class="blog-pagination section">
-
-      <div class="container">
-        <div class="d-flex justify-content-center">
-          <ul>
-            <li><a href="#"><i class="bi bi-chevron-left"></i></a></li>
-            <li><a href="#">1</a></li>
-            <li><a href="#" class="active">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li>...</li>
-            <li><a href="#">10</a></li>
-            <li><a href="#"><i class="bi bi-chevron-right"></i></a></li>
-          </ul>
-        </div>
-      </div>
-
-    </section><!-- /Blog Pagination Section -->
-
-  </main>
 
   <footer id="footer" class="footer dark-background">
     <div class="container">
@@ -333,6 +529,17 @@
 
   <!-- Main JS File -->
   <script src="{% static 'assets/js/main.js' %}"></script>
+
+  <script>
+  function toggleBlog(blogId) {
+      let blogContent = document.getElementById(blogId);
+      if (blogContent.style.display === "none") {
+      blogContent.style.display = "block";
+    } else {
+      blogContent.style.display = "none";
+    }
+  }
+  </script>
 
 </body>
 
