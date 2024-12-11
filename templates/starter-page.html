@@ -44,7 +44,7 @@
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">KnightOne</h1>
+        <h1 class="sitename">PetCare</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -52,26 +52,10 @@
           <li><a href="{% url 'index' %}">Home</a></li>
           <li><a href="{% url 'about' %}">About</a></li>
           <li><a href="{% url 'services' %}">Services</a></li>
-          <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
           <li><a href="{% url 'pricing' %}">Pricing</a></li>
+            <li><a href="{% url 'upload' %}">Upload Pet image</a></li>
+            <li><a href="{% url 'image' %}">My Pet Images</a></li>
           <li><a href="{% url 'blog' %}">Blog</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
           <li><a href="{% url 'contact' %}">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -94,32 +78,68 @@
 
   </main>
 
-  <footer id="footer" class="footer dark-background">
-    <div class="container">
-      <h3 class="sitename">KnightOne</h3>
-      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
-      <div class="social-links d-flex justify-content-center">
-        <a href=""><i class="bi bi-twitter-x"></i></a>
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-skype"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a>
+  <!-- Footer -->
+<footer class="bg-dark text-white text-center py-5">
+  <div class="container">
+    <!-- Footer Links -->
+    <div class="row mb-4 justify-content-center">
+      <div class="col-md-3">
+        <h5 class="text-uppercase font-weight-bold" style="color: #FFD700;">Company</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white">About Us</a></li>
+          <li><a href="#" class="text-white">Careers</a></li>
+          <li><a href="#" class="text-white">Blog</a></li>
+        </ul>
       </div>
-      <div class="container">
-        <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">KnightOne</strong> <span>All Rights Reserved</span>
-        </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you've purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-        </div>
+      <div class="col-md-3">
+        <h5 class="text-uppercase font-weight-bold" style="color: #FFD700;">Services</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white">Appointment Booking</a></li>
+          <li><a href="#" class="text-white">Pet Care Tips</a></li>
+          <li><a href="#" class="text-white">Image Uploads</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h5 class="text-uppercase font-weight-bold" style="color: #FFD700;">Help</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white">Contact Us</a></li>
+          <li><a href="#" class="text-white">FAQ</a></li>
+          <li><a href="#" class="text-white">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h5 class="text-uppercase font-weight-bold" style="color: #FFD700;">Follow Us</h5>
+        <ul class="list-unstyled d-flex justify-content-center">
+          <li>
+            <a href="#" target="_blank" style="background-color: #3b5998; padding: 10px; border-radius: 50%; transition: transform 0.3s ease;" class="text-white mx-2">
+              <i class="bi bi-facebook" style="font-size: 20px;"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank" style="background-color: #1da1f2; padding: 10px; border-radius: 50%; transition: transform 0.3s ease;" class="text-white mx-2">
+              <i class="bi bi-twitter-x" style="font-size: 20px;"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank" style="background-color: #e4405f; padding: 10px; border-radius: 50%; transition: transform 0.3s ease;" class="text-white mx-2">
+              <i class="bi bi-instagram" style="font-size: 20px;"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank" style="background-color: #0077b5; padding: 10px; border-radius: 50%; transition: transform 0.3s ease;" class="text-white mx-2">
+              <i class="bi bi-linkedin" style="font-size: 20px;"></i>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
-  </footer>
 
+    <!-- Copyright -->
+    <div class="text-center mt-4">
+      <p>© 2024 PetCare. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

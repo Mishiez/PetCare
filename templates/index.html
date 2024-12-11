@@ -18,6 +18,15 @@
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
+    <!-- Include Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMJH9B6D8j9w6E1UqgZcQ4pXWlq7D+T+gU9q8I" crossorigin="anonymous">
+
+
+
+
+    <!-- Include Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMJH9B6D8j9w6E1UqgZcQ4pXWlq7D+T+gU9q8I" crossorigin="anonymous">
+
   <!-- Vendor CSS Files -->
   <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
   <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
@@ -27,6 +36,15 @@
 
   <!-- Main CSS File -->
   <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+
+    <!-- Include Font Awesome for icons -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2DhKNBdaGA6Lje/Eln5vI12VwZ12zGWvJmZr6KpBnDjgmJf04vM2dABj45aLmCssw=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
 
 </head>
 
@@ -50,23 +68,6 @@
             <li><a href="{% url 'upload' %}">Upload Pet image</a></li>
             <li><a href="{% url 'image' %}">My Pet Images</a></li>
           <li><a href="{% url 'blog' %}">Blog</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
           <li><a href="{% url 'contact' %}">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -451,10 +452,61 @@
 </section><!-- /Recent Posts Section -->
 
 
+      <!-- Emergency Services Section -->
+<section id="emergency-services" class="emergency-services section light-background">
+  <div class="container" data-aos="fade-up">
+
+    <!-- Section Title -->
+    <div class="section-title">
+      <h2>Emergency Services</h2>
+      <p>Get immediate help for your pets during emergencies with our trusted services.</p>
+    </div>
+
+    <!-- Emergency Services Content -->
+    <div class="row gy-4">
+
+      <!-- Service 1 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="service-item">
+          <i class="bi bi-telephone-fill service-icon"></i>
+          <h4>24/7 Helpline</h4>
+          <p>Call us anytime for guidance or urgent pet-related advice: <strong>+254 702 000 111</strong></p>
+        </div>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="service-item">
+          <i class="bi bi-geo-alt-fill service-icon"></i>
+          <h4>Nearest Vet Locator</h4>
+          <p>Find a veterinary clinic near you for immediate assistance.</p>
+          <a href="{% url 'contact' %}" class="btn btn-secondary">Locate Now</a>
+        </div>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="service-item">
+          <i class="bi bi-shield-fill-check service-icon"></i>
+          <h4>Emergency Pet Care Tips</h4>
+          <p>Learn quick steps to stabilize your pet before professional help arrives.</p>
+          <a href="{% url 'blog' %}" class="btn btn-secondary">Read More</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
   </main>
 
-  <!-- Footer -->
-<footer class="bg-dark text-white py-5 text-center">
+
+
+ <!-- Footer -->
+<footer class="bg-dark text-white text-center py-5">
   <div class="container">
     <!-- Footer Links -->
     <div class="row mb-4 justify-content-center">
@@ -485,21 +537,43 @@
       <div class="col-md-3">
         <h5 class="text-uppercase font-weight-bold" style="color: #FFD700;">Follow Us</h5>
         <ul class="list-unstyled d-flex justify-content-center">
-          <li><a href="#" style="background-color: #3b5998; padding: 10px; border-radius: 50%; transition: transform 0.3s ease;" class="text-white mx-2"><i class="fab fa-facebook-f" style="font-size: 20px;"></i></a></li>
-          <li><a href="#" style="background-color: #1da1f2; padding: 10px; border-radius: 50%; transition: transform 0.3s ease;" class="text-white mx-2"><i class="fab fa-twitter" style="font-size: 20px;"></i></a></li>
-          <li><a href="#" style="background-color: #e4405f; padding: 10px; border-radius: 50%; transition: transform 0.3s ease;" class="text-white mx-2"><i class="fab fa-instagram" style="font-size: 20px;"></i></a></li>
-          <li><a href="#" style="background-color: #0077b5; padding: 10px; border-radius: 50%; transition: transform 0.3s ease;" class="text-white mx-2"><i class="fab fa-linkedin" style="font-size: 20px;"></i></a></li>
+          <li>
+            <a href="#" target="_blank" style="background-color: #3b5998; padding: 10px; border-radius: 50%; transition: transform 0.3s ease;" class="text-white mx-2">
+              <i class="bi bi-facebook" style="font-size: 20px;"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank" style="background-color: #1da1f2; padding: 10px; border-radius: 50%; transition: transform 0.3s ease;" class="text-white mx-2">
+              <i class="bi bi-twitter-x" style="font-size: 20px;"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank" style="background-color: #e4405f; padding: 10px; border-radius: 50%; transition: transform 0.3s ease;" class="text-white mx-2">
+              <i class="bi bi-instagram" style="font-size: 20px;"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank" style="background-color: #0077b5; padding: 10px; border-radius: 50%; transition: transform 0.3s ease;" class="text-white mx-2">
+              <i class="bi bi-linkedin" style="font-size: 20px;"></i>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
 
     <!-- Copyright -->
-    <div class="text-center">
+    <div class="text-center mt-4">
       <p>© 2024 PetCare. All Rights Reserved.</p>
     </div>
   </div>
 </footer>
-<!-- End Footer -->
+
+
+
+
+<!-- Include Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMJH9B6D8j9w6E1UqgZcQ4pXWlq7D+T+gU9q8I" crossorigin="anonymous">
+
 
 
 
